@@ -1,6 +1,6 @@
 ###############################################################################
-## Server.R for Shiny App: Personal Fitbit Data Explorer                     ##
-## Authoer: Jody P. Abney                                                    ##
+## server.R for Shiny App: Personal Fitbit Data Explorer                     ##
+## Author: Jody P. Abney                                                    ##
 ## Date: 16-Oct-2014                                                         ##
 ## Project: Coursera John Hopkins University Data Science Specialization -   ##
 ##          Developing Data Products Project                                 ##

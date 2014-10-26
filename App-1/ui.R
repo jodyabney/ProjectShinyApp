@@ -1,3 +1,11 @@
+###############################################################################
+## ui.R for Shiny App: Personal Fitbit Data Explorer                         ##
+## Author: Jody P. Abney                                                    ##
+## Date: 16-Oct-2014                                                         ##
+## Project: Coursera John Hopkins University Data Science Specialization -   ##
+##          Developing Data Products Project                                 ##
+###############################################################################
+
 
 # This is the user-interface definition of a Shiny web application.
 # You can find out more about building applications with Shiny here:
@@ -9,6 +17,7 @@ library(shiny)
 library(rCharts)
 
 shinyUI(
+    # Setup a navigation bar interface with Plot, About, and Insight tabs
     navbarPage("Personal Fitbit Data Explorer",
                tabPanel("Plot",
                         sidebarPanel(
@@ -24,7 +33,7 @@ shinyUI(
                         mainPanel(
                             tabsetPanel(
                                 
-                                # Plot steps
+                                # Plot steps using a simple ggplot linechart with trend line and goal line
                                 tabPanel('Overview of Steps',
                                          column(7,
                                                 plotOutput("stepsByDate")
@@ -38,7 +47,7 @@ shinyUI(
                                          showOutput("chartStepsByDate", "nvd3")
                                 ), # end of tabPanel
                                 
-                                # Display data
+                                # Display data and make it available for download
                                 tabPanel('Data',
                                          downloadButton('downloadData', 'Download'),
                                          dataTableOutput(outputId="table")
@@ -49,12 +58,14 @@ shinyUI(
                         
                ), # end of Plot tabPanel
                
+               # Provide general instructions and some background information
                tabPanel("About",
                         mainPanel(
                             includeMarkdown("about.md")
                         )
                ), # end of About tabPanel
                
+               # Provide some personal insights based on use of the app and my personal Fitbit data
                tabPanel("Insights",
                         mainPanel(
                             includeMarkdown("insights.md")

@@ -13,7 +13,7 @@ The `Year` range and `Day of Week` selections can be adjusted using control pane
 
 #### Background
 
-Owning a [Fitbit](http://www.fitbit.com/store) device has changed my life and it just might change your life too. The ability to log my daily activity changed the way I look at getting walking steps completed. I strive for 10,000 steps per day and my steps are logged automatically by the Fitbit device to my Fitbit Dashboard. I can there review by activity by day and for the last week. They offer a pay service which provides more trending options, but I decided to use their API (application programming interface) and the R programming language with R Studio to build a Shiny data product on the web allowing me to review my step activity data/trend.
+Owning a [Fitbit](http://www.fitbit.com/store) device has changed my life and it just might change your life too. The ability to log my daily activity changed the way I look at getting walking steps completed. I strive for 10,000 steps per day and my steps are logged automatically by the Fitbit device to my Fitbit Dashboard. I can there review by activity by day and for the last week. They offer a pay service which provides more trending options, but I decided to use their API (application programming interface) and the R programming language with R Studio to build a Shiny data product on the web allowing me to review my step activity data/trend. The hope was to discover personal insights that I can observe and change, if needed, to drive more physical activity.
 
 #### Obtaining the Source Data
 
@@ -24,6 +24,8 @@ Dataset has been obtained via the API (Application Programming Interface) from t
 * Clean up the `date` and `steps` to be "date" and "numeric" types, respectively
 * Add `dayName` column for Day of the Week calculated based on `date`
 * The resulting data is then stored in `fitbit_data.csv` used as source data for the Shiny application
+
+
 
 
 
