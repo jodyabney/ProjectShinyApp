@@ -9,11 +9,8 @@
 #### Load required libraries ####
 library(shiny)
 library(ggplot2)
-#library(data.table)
 library(rCharts)
-#library(reshape2)
 library(markdown)
-#library(GGally)
 
 #### Read the data and format the data frame ####
 fbdata <- as.data.frame(read.csv('data/fitbit_data.csv'))
