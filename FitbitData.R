@@ -8,7 +8,7 @@ token_url = "https://api.fitbit.com/oauth/request_token"
 access_url = "https://api.fitbit.com/oauth/access_token"
 auth_url = "https://www.fitbit.com/oauth/authorize"
 key = "3c6a42d960bf48de8dd2ed5ded275bd5"
-secret = "0d5c39d59ee7443780088ba9b445391c"
+secret = "secret"
 
 fbr = oauth_app('JHUDDP_JPA',key,secret)
 fitbit = oauth_endpoint(token_url,auth_url,access_url)
