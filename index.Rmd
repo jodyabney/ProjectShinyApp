@@ -1,0 +1,65 @@
+---
+title: "Personal Fitbit Data Explorer"
+author: "Jody P. Abney"
+highlighter: highlight.js
+output: html_document
+job: null
+knit: slidify::knit2slides
+mode: standalone
+hitheme: tomorrow
+subtitle: Coursera JHU Data Science Specialization - Developing Data Products Project
+framework: io2012
+widgets: []
+---
+
+## Presentation Goal
+
+Obtain support and funding for the [Personal Fitbit Data Explorer](http://jodyabney.shinyapps.io/Personal_Fitbit_Data_Explorer/) data product
+
+--- .class #id 
+
+## Application Description
+![screenshot](assets/img/screenshot1.png)
+
+The Personal Fitbit Data Explorer allows a Fitbit user to review their step activity and selectively filter by year and days of week to observe patterns about their own personal activity behavior. The user can then make more informed decisions about their activity levels and change their behavior accordingly.
+
+The application is available at [Personal Fitbit Data Explorer](http://jodyabney.shinyapps.io/Personal_Fitbit_Data_Explorer/)
+
+--- .class #id 
+
+## Fitbit Data Sample
+Here is some of my personal Fitbit data processed for consumption in the [Personal Fitbit Data Explorer](http://jodyabney.shinyapps.io/Personal_Fitbit_Data_Explorer/) data product
+```{r echo=TRUE, eval=FALSE}
+#### Read the data and format the data frame ####
+fbdata <- as.data.frame(read.csv('data/fitbit_data.csv'))
+fbdata <- fbdata[!(fbdata$steps==0),] # drop any days with 0 steps
+fbdata$date <- as.Date(as.character(fbdata$date)) # format as a date field
+fbdata <- fbdata[,-1,] # remove rowstamp column
+head(fbdata, 5)
+```
+
+```{r echo=FALSE}
+#### Set the working directory ####
+setwd("~/Documents/GitHub Repositories/ProjectShinyApp/App-1")
+
+#### Read the data and format the data frame ####
+fbdata <- as.data.frame(read.csv('data/fitbit_data.csv'))
+fbdata <- fbdata[!(fbdata$steps==0),] # drop any days with 0 steps
+fbdata$date <- as.Date(as.character(fbdata$date)) # format as a date field
+fbdata <- fbdata[,-1,] # remove rowstamp column
+head(fbdata, 5)
+```
+
+--- .class #id 
+
+## Results of Using Personal Fitbit Data Explorer
+By using the [Personal Fitbit Data Explorer](http://jodyabney.shinyapps.io/Personal_Fitbit_Data_Explorer/) data product only a short time, I learned the following about my own walking exercise patterns:
+* I've been walking more in general since purchasing the Fitbit and tracking my steps each day
+* I walk more on weekdays than weekends as evidenced when reviewing the data by Day of Week.
+* I walk more when I travel on business than I general walk when working from home.
+* Best of all, I've lost ~30 lbs since I've been working at increasing my activity levels such as number of steps per day!
+
+Future versions of the app will:
+* Allow filtering or facet plotting by Weekday vs Weekend
+* Allow logging of calendar periods such as travel versus home
+* Allow the option to enter personal weight information or collecting weight information if the user has the data available via Fitbit or an alternative source.
